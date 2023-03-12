@@ -10,7 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, "./dist_webpack"),
     library: {
       name: "@[name]",
-      type: "umd",
+      type: "amd",
     },
   },
   plugins: [new HtmlWebpackPlugin()],
