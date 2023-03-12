@@ -13,11 +13,17 @@ module.exports = {
       type: "umd",
     },
   },
-  plugins: [new HtmlWebpackPlugin()],
+  devtool: false,
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./index.html",
+    }),
+  ],
   resolve: {
     extensions: [".jsx", ".js"],
   },
-  externals: ["react", "react-dom"],
+  //   externals: ["react", "react-dom"],
+  externalsType: "umd",
   module: {
     rules: [
       {
