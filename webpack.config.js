@@ -13,11 +13,13 @@ module.exports = {
       type: "amd",
     },
   },
+  devtool: false,
   plugins: [new HtmlWebpackPlugin()],
   resolve: {
     extensions: [".jsx", ".js"],
   },
   externals: ["react", "react-dom"],
+  externalsType: "amd",
   module: {
     rules: [
       {
