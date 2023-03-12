@@ -14,7 +14,11 @@ module.exports = {
     },
   },
   devtool: false,
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./index.html",
+    }),
+  ],
   resolve: {
     extensions: [".jsx", ".js"],
   },
@@ -25,7 +29,7 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        loader: "css-loader",
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.jsx?$/,
