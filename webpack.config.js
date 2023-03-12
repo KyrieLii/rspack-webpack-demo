@@ -10,7 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, "./dist_webpack"),
     library: {
       name: "@[name]",
-      type: "amd",
+      type: "umd",
     },
   },
   devtool: false,
@@ -23,7 +23,7 @@ module.exports = {
     extensions: [".jsx", ".js"],
   },
   //   externals: ["react", "react-dom"],
-  externalsType: "amd",
+  externalsType: "umd",
   module: {
     rules: [
       {

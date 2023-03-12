@@ -11,10 +11,10 @@ module.exports = {
   //     react: "react",
   //     "react-dom": "react-dom",
   //   },
-  externalsType: "amd",
+  externalsType: "umd",
   output: {
     library: {
-      type: "amd",
+      type: "umd",
       name: "@[name]",
     },
   },
