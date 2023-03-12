@@ -7,10 +7,10 @@ module.exports = {
   entry: {
     main: "./src/main.jsx",
   },
-  externals: {
-    react: "react",
-    "react-dom": "react-dom",
-  },
+  //   externals: {
+  //     react: "react",
+  //     "react-dom": "react-dom",
+  //   },
   externalsType: "amd",
   output: {
     library: {

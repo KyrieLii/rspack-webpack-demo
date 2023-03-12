@@ -14,11 +14,15 @@ module.exports = {
     },
   },
   devtool: false,
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./index.html",
+    }),
+  ],
   resolve: {
     extensions: [".jsx", ".js"],
   },
-  externals: ["react", "react-dom"],
+  //   externals: ["react", "react-dom"],
   externalsType: "amd",
   module: {
     rules: [
