@@ -2,9 +2,11 @@ import React from "react";
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
+import context from "./context/index.ts";
 
 function App() {
   const [count, setCount] = useState(0);
+  console.log("context", context);
 
   return (
     <div className="App">

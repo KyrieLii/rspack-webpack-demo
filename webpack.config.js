@@ -41,6 +41,20 @@ module.exports = {
         test: /\.svg$/,
         loader: "@svgr/webpack",
       },
+      {
+        test: /\.ya?ml$/,
+        use: [
+          {
+            loader: "json-loader",
+          },
+          {
+            loader: "yaml-loader",
+            options: {
+              asJSON: true,
+            },
+          },
+        ],
+      },
     ],
   },
 };

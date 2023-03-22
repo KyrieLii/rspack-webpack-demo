@@ -1,3 +1,5 @@
+const path = require("path");
+
 /**
  * @type {import('@rspack/cli').Configuration}
  */
@@ -30,6 +32,18 @@ module.exports = {
       {
         test: /\.svg$/,
         type: "asset",
+      },
+      {
+        test: /\.ya?ml$/,
+        use: [
+          { loader: path.resolve("./src/loader/jsonLoader") },
+          {
+            loader: require.resolve("yaml-loader"),
+            options: {
+              asJSON: true,
+            },
+          },
+        ],
       },
     ],
   },
