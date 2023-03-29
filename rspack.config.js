@@ -5,16 +5,16 @@ module.exports = {
   context: __dirname,
   mode: "development",
   entry: {
-    main: "./src/main.jsx",
+    react: "./src/react.js",
   },
   //   externals: {
   //     react: "react",
   //     "react-dom": "react-dom",
   //   },
-  externalsType: "umd",
+  externalsType: "amd",
   output: {
     library: {
-      type: "umd",
+      type: "amd",
       name: "@[name]",
     },
   },

@@ -4,13 +4,15 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    main: "./src/main.jsx",
+    react: "./src/react.js",
+    "react-dom": "./src/react-dom.js",
+    "react/jsx-runtime": "./src/runtime.js",
   },
   output: {
     path: path.resolve(__dirname, "./dist_webpack"),
     library: {
-      name: "@[name]",
-      type: "umd",
+      name: "[name]",
+      type: "amd",
     },
   },
   devtool: false,
@@ -23,24 +25,24 @@ module.exports = {
     extensions: [".jsx", ".js"],
   },
   //   externals: ["react", "react-dom"],
-  externalsType: "umd",
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        loader: "css-loader",
-      },
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: "babel-loader",
-        options: { presets: ["@babel/env", "@babel/preset-react"] },
-      },
-      {
-        test: /\.svg$/,
-        loader: "@svgr/webpack",
-      },
-    ],
-  },
+  externalsType: "amd",
+  //   module: {
+  //     rules: [
+  //       {
+  //         test: /\.css$/,
+  //         exclude: /node_modules/,
+  //         loader: "css-loader",
+  //       },
+  //       {
+  //         test: /\.jsx?$/,
+  //         exclude: /node_modules/,
+  //         loader: "babel-loader",
+  //         options: { presets: ["@babel/env", "@babel/preset-react"] },
+  //       },
+  //       {
+  //         test: /\.svg$/,
+  //         loader: "@svgr/webpack",
+  //       },
+  //     ],
+  //   },
 };
