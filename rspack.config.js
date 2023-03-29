@@ -7,14 +7,14 @@ module.exports = {
   entry: {
     main: "./src/main.jsx",
   },
-  //   externals: {
-  //     react: "react",
-  //     "react-dom": "react-dom",
-  //   },
-  externalsType: "umd",
+  externals: {
+    react: "react",
+    "react-dom": "react-dom",
+  },
+  externalsType: "amd",
   output: {
     library: {
-      type: "umd",
+      type: "amd",
       name: "@[name]",
     },
   },
