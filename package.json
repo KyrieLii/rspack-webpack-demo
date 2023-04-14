@@ -17,7 +17,7 @@
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
-    "@rspack/cli": "0.1.4",
+    "@rspack/cli": "0.1.6",
     "@svgr/webpack": "^6.5.1",
     "babel-loader": "^9.1.2",
     "circular-dependency-plugin": "^5.2.2",
