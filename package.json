@@ -9,6 +9,7 @@
     "wbuild": "webpack build"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "webpack": "^5.76.1"
@@ -17,7 +18,7 @@
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
-    "@rspack/cli": "0.1.6",
+    "@rspack/cli": "latest",
     "@svgr/webpack": "^6.5.1",
     "babel-loader": "^9.1.2",
     "circular-dependency-plugin": "^5.2.2",
