@@ -18,7 +18,24 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./index.html",
+      templateParameters: (compilation) => {
+        console.log(
+          "compilation.namedChunkGroups",
+          compilation.namedChunkGroups.get("main").chunks
+        );
+        console.log(
+          "compilation.getStats().toJson().namedChunkGroups",
+          compilation.getStats().toJson().namedChunkGroups
+        );
+
+        return {};
+      },
     }),
+    {
+      apply(compiler) {
+        console.log("compiler.namedChunkGroups", compiler.namedChunkGroups);
+      },
+    },
   ],
   resolve: {
     extensions: [".jsx", ".js"],

@@ -1,3 +1,4 @@
+const { default: HtmlPlugin } = require("@rspack/plugin-html");
 /**
  * @type {import('@rspack/cli').Configuration}
  */
@@ -15,13 +16,28 @@ module.exports = {
       name: "@[name]",
     },
   },
-  builtins: {
-    html: [
-      {
-        template: "./index.html",
+  builtins: {},
+  plugins: [
+    new HtmlPlugin({
+      template: "./index.html",
+      templateParameters: (compilation) => {
+        console.log(
+          "compilation.namedChunkGroups",
+          compilation.namedChunkGroups
+        );
+        console.log(
+          "compilation.getStats().toJson().namedChunkGroups",
+          JSON.stringify(
+            compilation.getStats().toJson().namedChunkGroups,
+            null,
+            2
+          )
+        );
+
+        return {};
       },
-    ],
-  },
+    }),
+  ],
   module: {
     rules: [
       {
