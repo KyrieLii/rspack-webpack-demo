@@ -8,40 +8,16 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "./dist_webpack"),
-    library: {
-      name: "@[name]",
-      type: "amd",
-    },
-    libraryTarget: "amd",
   },
   devtool: false,
   plugins: [
     new HtmlWebpackPlugin({
       template: "./index.html",
-      templateParameters: (compilation) => {
-        console.log(
-          "compilation.namedChunkGroups",
-          compilation.namedChunkGroups.get("main").chunks
-        );
-        console.log(
-          "compilation.getStats().toJson().namedChunkGroups",
-          compilation.getStats().toJson().namedChunkGroups
-        );
-
-        return {};
-      },
     }),
-    {
-      apply(compiler) {
-        console.log("compiler.namedChunkGroups", compiler.namedChunkGroups);
-      },
-    },
   ],
   resolve: {
     extensions: [".jsx", ".js"],
   },
-  externals: ["react", "react-dom"],
-  externalsType: "amd",
   module: {
     rules: [
       {

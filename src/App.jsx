@@ -1,14 +1,11 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import mmm from './mmm';
 
-console.log(mmm);
+console.log("uuuurl", import.meta.url);
 
 function App() {
   const [count, setCount] = useState(0);
-
   return (
     <div className="App">
       <div>
@@ -32,4 +29,4 @@ function App() {
   );
 }
 
-export default compose(withA)(App);
+export default App;
