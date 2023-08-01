@@ -23,7 +23,7 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        loader: "css-loader",
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.jsx?$/,
@@ -33,7 +33,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        loader: "@svgr/webpack",
+        use: ["@svgr/webpack"],
       },
     ],
   },
