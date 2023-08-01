@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "rspack serve",
     "dev:w": "webpack serve",
-    "build": "rspack build",
-    "build:w": "webpack build"
+    "build": "rm -rf ./dist && NODE_ENV=production rspack build",
+    "build:w": "rm -rf ./dist_webpack && NODE_ENV=production webpack build"
   },
   "dependencies": {
     "lodash": "^4.17.21",

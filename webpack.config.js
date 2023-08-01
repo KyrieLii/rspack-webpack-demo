@@ -2,9 +2,11 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: process.env.NODE_ENV ?? "development",
   entry: {
     main: "./src/main.jsx",
+    about: "./src/pages/about.jsx",
+    contact: "./src/pages/contact.jsx",
   },
   output: {
     path: path.resolve(__dirname, "./dist_webpack"),
@@ -36,5 +38,11 @@ module.exports = {
         use: ["@svgr/webpack"],
       },
     ],
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      name: "123",
+    },
   },
 };
