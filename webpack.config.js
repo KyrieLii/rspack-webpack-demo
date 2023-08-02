@@ -42,7 +42,7 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: "all",
-      name: "123",
     },
+    chunkIds: "named",
   },
 };

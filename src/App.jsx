@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Logo from "./assets/react.svg";
 import "./App.css";
+
 function App() {
   const [count, setCount] = useState(0);
+  const [s, setS] = useState({});
+  const handler = async () => {
+    const a = await import("./utils/a");
+    console.log(a);
+    setS(a);
+  };
+  useEffect(() => {
+    handler();
+  }, []);
   return (
     <div className="App">
       <div>
