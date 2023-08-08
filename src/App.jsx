@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Logo from "./assets/react.svg";
 import "./App.css";
+import { a1 } from "./utils";
+
+const obj = {
+  a: "a",
+  b: "b",
+};
 
 function App() {
   const [count, setCount] = useState(0);
@@ -9,9 +15,13 @@ function App() {
     const a = await import("./utils/a");
     console.log(a);
     setS(a);
+    console.log(a1);
   };
   useEffect(() => {
     handler();
+    for (const k of obj) {
+      console.log(k);
+    }
   }, []);
   return (
     <div className="App">

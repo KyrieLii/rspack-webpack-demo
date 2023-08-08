@@ -40,9 +40,18 @@ module.exports = {
     ],
   },
   optimization: {
-    splitChunks: {
-      chunks: "all",
-    },
     chunkIds: "named",
+    moduleIds: "named",
+    // usedExports: true,
+    // sideEffects: true,
+    // splitChunks: {
+    //   chunks: "all",
+    // },
+    chunkIds: "named",
+  },
+  devServer: {
+    devMiddleware: {
+      writeToDisk: true,
+    },
   },
 };
