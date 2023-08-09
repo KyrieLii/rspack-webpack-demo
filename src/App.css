@@ -5,6 +5,16 @@
   text-align: center;
 }
 
+@font-face {
+  font-family: "iconfont"; /* Project id 3599030 */
+  src: url("//at.alicdn.com/t/c/font_3599030_45zm1z0rz22.woff2?t=1662086335716")
+      format("woff2"),
+    url("//at.alicdn.com/t/c/font_3599030_45zm1z0rz22.woff?t=1662086335716")
+      format("woff"),
+    url("//at.alicdn.com/t/c/font_3599030_45zm1z0rz22.ttf?t=1662086335716")
+      format("truetype");
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

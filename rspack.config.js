@@ -8,6 +8,11 @@ module.exports = {
   entry: {
     main: "./src/main.jsx",
   },
+  output: {
+    libraryTarget: "umd",
+  },
+  externals: [],
+  externalsType: "umd",
   builtins: {},
   plugins: [
     new HtmlPlugin({
