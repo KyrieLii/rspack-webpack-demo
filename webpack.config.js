@@ -1,4 +1,5 @@
 const path = require("path");
+const esbuild = require("esbuild");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -18,6 +19,9 @@ module.exports = {
   resolve: {
     extensions: [".jsx", ".js"],
   },
+  devServer: {
+    devMiddleware: { writeToDisk: true },
+  },
   module: {
     rules: [
       {
@@ -26,11 +30,21 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: "babel-loader",
-        options: { presets: ["@babel/env", "@babel/preset-react"] },
+        test: /\.(js|jsx|mjs|ts|tsx)$/,
+        loader: "esbuild-loader",
+        resolve: {
+          fullySpecified: false,
+        },
+        options: {
+          loader: "tsx",
+        },
       },
+      //   {
+      //     test: /\.jsx?$/,
+      //     exclude: /node_modules/,
+      //     loader: "babel-loader",
+      //     options: { presets: ["@babel/env", "@babel/preset-react"] },
+      //   },
       {
         test: /\.svg$/,
         use: ["@svgr/webpack"],

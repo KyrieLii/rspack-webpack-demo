@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Logo from "./assets/react.svg";
 import "./App.css";
+
 function App() {
   const [count, setCount] = useState(0);
+  useEffect(() => {
+    console.log("import.meta.url", import.meta.url);
+    new Worker(new URL("./t.worker.ts", import.meta.url));
+  }, []);
+
   return (
     <div className="App">
       <div>
